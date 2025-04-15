@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-    workflow_distpach: #permite ejecutar manualmente desde githubs actions
+  workflow_dispatch: #permite ejecutar manualmente desde githubs actions
 
 jobs:
   deploy:
@@ -15,9 +15,9 @@ jobs:
 
       - name: Verificar Variables de entorno
         run: |
-		      echo "IP del Servidor : ${{ secrets.SERVER_IP }}"
-		      echo "Usuario : ${{ secrets.SERVER_USER }}"
-		      echo "Puerto SSH : ${{ secrets.SERVER_PORT }}"
+	  echo "IP del Servidor : ${{ secrets.SERVER_IP }}"
+	  echo "Usuario : ${{ secrets.SERVER_USER }}"
+	  echo "Puerto SSH : ${{ secrets.SERVER_PORT }}"
 
       - name: Copiar archivos al servidor
         uses: appleboy/scp-action@v0.1.4
